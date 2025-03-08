@@ -1,12 +1,16 @@
 from flask import Flask, redirect, request, session, url_for, jsonify
+from dotenv import load_dotenv
 import requests
 import re
 import os
 
-app = Flask(__name__)
-app.secret_key = os.urandom(24)  # Replace with a secure key
+load_dotenv()
 
-STEAM_API_KEY = "STEAM_API_KEY"
+
+app = Flask(__name__)
+app.secret_key = os.getenv('SECRET_KEY').encode('utf-8', 'replace').decode()
+
+STEAM_API_KEY = os.getenv('STEAM_API_KEY')
 OPENID_URL = "https://steamcommunity.com/openid/login"
 
 def get_steam_id(identity_url):

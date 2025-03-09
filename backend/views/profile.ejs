@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Retrommender</title>
+	</head>
+	<body>
+		<section class="home">
+			<header>
+				<h1>Retro Game Recommender</h1>
+			</header>
+			<section>
+				<h2>Welcome <%= user.displayName %></h2>
+                <img src="<%= user.photos[0].value %>" alt="Avatar">
+                <p>Steam ID: <%= user.id %></p>
+				<a class="button" href="/auth/steam">Sign in with Steam</a>
+			</section>
+		</section>
+		<footer class="info">
+			<p>Created by <a href="https://github.com/fatinul">Fatinul</a> and <a href="https://github.com/Maissan26">Maissan26</a> </p>
+		</footer>
+	</body>
+</html>
